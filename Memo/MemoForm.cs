@@ -302,5 +302,10 @@ namespace Memo
 		{
 			memoEditList1.ExportDialog(IOEncoding);
 		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			memoEditList1.ClearPage();
+		}
 	}
 }

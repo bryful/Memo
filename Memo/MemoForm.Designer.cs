@@ -45,6 +45,7 @@ namespace Memo
 			this.btnPaste = new System.Windows.Forms.ToolStripButton();
 			this.btnMemos = new System.Windows.Forms.ToolStripDropDownButton();
 			this.memoCMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnClear = new System.Windows.Forms.ToolStripMenuItem();
 			this.memoEditList1 = new Memo.MemoEditList();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -84,7 +85,7 @@ namespace Memo
 			this.ImportCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.ImportCMenu.ForeColor = System.Drawing.Color.White;
 			this.ImportCMenu.Name = "ImportCMenu";
-			this.ImportCMenu.Size = new System.Drawing.Size(180, 22);
+			this.ImportCMenu.Size = new System.Drawing.Size(147, 22);
 			this.ImportCMenu.Text = "Import";
 			this.ImportCMenu.Click += new System.EventHandler(this.ImportCMenu_Click);
 			// 
@@ -93,7 +94,7 @@ namespace Memo
 			this.ExportCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.ExportCMenu.ForeColor = System.Drawing.Color.White;
 			this.ExportCMenu.Name = "ExportCMenu";
-			this.ExportCMenu.Size = new System.Drawing.Size(180, 22);
+			this.ExportCMenu.Size = new System.Drawing.Size(147, 22);
 			this.ExportCMenu.Text = "Export";
 			this.ExportCMenu.Click += new System.EventHandler(this.ExportCMenu_Click);
 			// 
@@ -104,7 +105,7 @@ namespace Memo
 			this.encodeUTF8CMenu.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.encodeUTF8CMenu.ForeColor = System.Drawing.Color.White;
 			this.encodeUTF8CMenu.Name = "encodeUTF8CMenu";
-			this.encodeUTF8CMenu.Size = new System.Drawing.Size(180, 22);
+			this.encodeUTF8CMenu.Size = new System.Drawing.Size(147, 22);
 			this.encodeUTF8CMenu.Text = "EncodeUTF8";
 			this.encodeUTF8CMenu.Click += new System.EventHandler(this.encodeShftJISCMenu_Click);
 			// 
@@ -113,7 +114,7 @@ namespace Memo
 			this.encodeShftJISCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.encodeShftJISCMenu.ForeColor = System.Drawing.Color.White;
 			this.encodeShftJISCMenu.Name = "encodeShftJISCMenu";
-			this.encodeShftJISCMenu.Size = new System.Drawing.Size(180, 22);
+			this.encodeShftJISCMenu.Size = new System.Drawing.Size(147, 22);
 			this.encodeShftJISCMenu.Text = "EncodeShftJIS";
 			this.encodeShftJISCMenu.Click += new System.EventHandler(this.encodeShftJISCMenu_Click);
 			// 
@@ -122,7 +123,7 @@ namespace Memo
 			this.QuitCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.QuitCMenu.ForeColor = System.Drawing.Color.White;
 			this.QuitCMenu.Name = "QuitCMenu";
-			this.QuitCMenu.Size = new System.Drawing.Size(180, 22);
+			this.QuitCMenu.Size = new System.Drawing.Size(147, 22);
 			this.QuitCMenu.Text = "Quit";
 			this.QuitCMenu.Click += new System.EventHandler(this.QuitCMenu_Click);
 			// 
@@ -130,6 +131,7 @@ namespace Memo
 			// 
 			this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.btnEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnClear,
             this.BtnEditCaption,
             this.btnSelectionToCaption,
             this.btnFontSettings});
@@ -144,7 +146,7 @@ namespace Memo
 			this.BtnEditCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.BtnEditCaption.ForeColor = System.Drawing.Color.White;
 			this.BtnEditCaption.Name = "BtnEditCaption";
-			this.BtnEditCaption.Size = new System.Drawing.Size(175, 22);
+			this.BtnEditCaption.Size = new System.Drawing.Size(180, 22);
 			this.BtnEditCaption.Text = "EditCaption";
 			this.BtnEditCaption.Click += new System.EventHandler(this.editCaptionToolStripMenuItem_Click);
 			// 
@@ -153,7 +155,7 @@ namespace Memo
 			this.btnSelectionToCaption.BackColor = System.Drawing.Color.Black;
 			this.btnSelectionToCaption.ForeColor = System.Drawing.Color.White;
 			this.btnSelectionToCaption.Name = "btnSelectionToCaption";
-			this.btnSelectionToCaption.Size = new System.Drawing.Size(175, 22);
+			this.btnSelectionToCaption.Size = new System.Drawing.Size(180, 22);
 			this.btnSelectionToCaption.Text = "SelectionToCaption";
 			// 
 			// btnFontSettings
@@ -161,7 +163,7 @@ namespace Memo
 			this.btnFontSettings.BackColor = System.Drawing.Color.Black;
 			this.btnFontSettings.ForeColor = System.Drawing.Color.White;
 			this.btnFontSettings.Name = "btnFontSettings";
-			this.btnFontSettings.Size = new System.Drawing.Size(175, 22);
+			this.btnFontSettings.Size = new System.Drawing.Size(180, 22);
 			this.btnFontSettings.Text = "FontSettings";
 			// 
 			// btnCopy
@@ -203,6 +205,15 @@ namespace Memo
 			this.memoCMenu.Size = new System.Drawing.Size(108, 22);
 			this.memoCMenu.Text = "Memo";
 			// 
+			// btnClear
+			// 
+			this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+			this.btnClear.ForeColor = System.Drawing.Color.White;
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Size = new System.Drawing.Size(180, 22);
+			this.btnClear.Text = "Clear";
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
 			// memoEditList1
 			// 
 			this.memoEditList1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -230,8 +241,8 @@ namespace Memo
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.memoEditList1);
 			this.ForeColor = System.Drawing.Color.White;
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.Name = "MemoForm";
+			this.ShowIcon = false;
 			this.Text = "Memo";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
 			this.Load += new System.EventHandler(this.MainForm_Load);
@@ -261,6 +272,7 @@ namespace Memo
 		private System.Windows.Forms.ToolStripMenuItem QuitCMenu;
 		private System.Windows.Forms.ToolStripMenuItem encodeShftJISCMenu;
 		private System.Windows.Forms.ToolStripMenuItem encodeUTF8CMenu;
+		private System.Windows.Forms.ToolStripMenuItem btnClear;
 	}
 }
 

@@ -554,5 +554,12 @@ namespace Memo
 			return ret;
 		}
 		// ***************************************************************
+		public void ClearPage()
+		{
+			int idx = SelectedMemoIndex;
+			if (idx < 0) return;
+			m_memos[idx].Doc = "";
+			m_tc.TabPages[idx].Text = string.Format("{0}", idx);
+		}
 	}
 }
