@@ -85,7 +85,8 @@ namespace Memo
 			this.ImportCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.ImportCMenu.ForeColor = System.Drawing.Color.White;
 			this.ImportCMenu.Name = "ImportCMenu";
-			this.ImportCMenu.Size = new System.Drawing.Size(147, 22);
+			this.ImportCMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+			this.ImportCMenu.Size = new System.Drawing.Size(180, 22);
 			this.ImportCMenu.Text = "Import";
 			this.ImportCMenu.Click += new System.EventHandler(this.ImportCMenu_Click);
 			// 
@@ -94,7 +95,8 @@ namespace Memo
 			this.ExportCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.ExportCMenu.ForeColor = System.Drawing.Color.White;
 			this.ExportCMenu.Name = "ExportCMenu";
-			this.ExportCMenu.Size = new System.Drawing.Size(147, 22);
+			this.ExportCMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+			this.ExportCMenu.Size = new System.Drawing.Size(180, 22);
 			this.ExportCMenu.Text = "Export";
 			this.ExportCMenu.Click += new System.EventHandler(this.ExportCMenu_Click);
 			// 
@@ -105,7 +107,7 @@ namespace Memo
 			this.encodeUTF8CMenu.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.encodeUTF8CMenu.ForeColor = System.Drawing.Color.White;
 			this.encodeUTF8CMenu.Name = "encodeUTF8CMenu";
-			this.encodeUTF8CMenu.Size = new System.Drawing.Size(147, 22);
+			this.encodeUTF8CMenu.Size = new System.Drawing.Size(180, 22);
 			this.encodeUTF8CMenu.Text = "EncodeUTF8";
 			this.encodeUTF8CMenu.Click += new System.EventHandler(this.encodeShftJISCMenu_Click);
 			// 
@@ -114,7 +116,7 @@ namespace Memo
 			this.encodeShftJISCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.encodeShftJISCMenu.ForeColor = System.Drawing.Color.White;
 			this.encodeShftJISCMenu.Name = "encodeShftJISCMenu";
-			this.encodeShftJISCMenu.Size = new System.Drawing.Size(147, 22);
+			this.encodeShftJISCMenu.Size = new System.Drawing.Size(180, 22);
 			this.encodeShftJISCMenu.Text = "EncodeShftJIS";
 			this.encodeShftJISCMenu.Click += new System.EventHandler(this.encodeShftJISCMenu_Click);
 			// 
@@ -123,7 +125,8 @@ namespace Memo
 			this.QuitCMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.QuitCMenu.ForeColor = System.Drawing.Color.White;
 			this.QuitCMenu.Name = "QuitCMenu";
-			this.QuitCMenu.Size = new System.Drawing.Size(147, 22);
+			this.QuitCMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+			this.QuitCMenu.Size = new System.Drawing.Size(180, 22);
 			this.QuitCMenu.Text = "Quit";
 			this.QuitCMenu.Click += new System.EventHandler(this.QuitCMenu_Click);
 			// 
@@ -223,6 +226,7 @@ namespace Memo
 			this.memoEditList1.BackColorAll = System.Drawing.Color.Black;
 			this.memoEditList1.CurrentCaption = "0";
 			this.memoEditList1.CurrentDoc = "";
+			this.memoEditList1.CurrentFileName = "";
 			this.memoEditList1.Font = new System.Drawing.Font("源ノ角ゴシック Code JP R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.memoEditList1.Location = new System.Drawing.Point(0, 28);
 			this.memoEditList1.Name = "memoEditList1";

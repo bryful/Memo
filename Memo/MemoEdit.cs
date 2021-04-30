@@ -16,6 +16,8 @@ namespace Memo
 {
 	public class MemoEdit : Control
 	{
+		public string FileName { get; set; }
+
 		private TextBox m_tb = new TextBox();
 		private const uint IMF_DUALFONT = 0x80;
 		private const uint WM_USER = 0x0400;
@@ -35,6 +37,8 @@ namespace Memo
 		// ******************************************
 		public MemoEdit()
 		{
+			FileName = "";
+
 			m_tb.Multiline = true;
 			m_tb.Font = new Font("源ノ角ゴシック Code JP R", 12f);
 			m_tb.TextChanged += MemoEdit_TextChanged;
@@ -188,6 +192,10 @@ namespace Memo
 			{
 				m_tb.Copy();
 			}
+		}
+		public void CutFrom()
+		{
+			m_tb.Cut();
 		}
 		public void PasteTo()
 		{

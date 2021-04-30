@@ -148,6 +148,14 @@ namespace Memo
 			}
 			obj.Add("Captions", (object)sa2);
 
+			string[] sa3 = new string[m_memos.Count];
+			for (int i = 0; i < m_memos.Count; i++)
+			{
+				sa3[i] = m_memos[i].FileName;
+			}
+			obj.Add("FileNames", (object)sa3);
+
+
 			var options = new JsonSerializerOptions
 			{
 				Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
@@ -176,7 +184,7 @@ namespace Memo
 
 					try
 					{
-						if ((si is double)|| (si is int))
+						if ((si is double) || (si is int))
 						{
 							cnt = (int)si;
 						}
@@ -198,7 +206,7 @@ namespace Memo
 				if (obj.ContainsKey(key))
 				{
 					var so = (object)obj[key];
-					string [] mm = new string[0];
+					string[] mm = new string[0];
 					if (so != null)
 					{
 						try
@@ -291,13 +299,62 @@ namespace Memo
 						}
 					}
 
+
+				}
+				key = "FileNames";
+				if (obj.ContainsKey(key))
+				{
+					var so = (object)obj[key];
+					string[] mm = new string[0];
+					if (so != null)
+					{
+						try
+						{
+
+							if (so is string[])
+							{
+								mm = (string[])so;
+							}
+							else
+							{
+								JsonElement je = (JsonElement)so;
+								if (je.ValueKind == JsonValueKind.Array)
+								{
+									List<string> da = new List<string>();
+									foreach (var vv in je.EnumerateArray())
+									{
+										if (vv.ValueKind == JsonValueKind.String)
+										{
+											da.Add(vv.GetString());
+										}
+									}
+									mm = da.ToArray();
+								}
+
+								if ((mm.Length == cnt))
+								{
+									int cnt2 = cnt;
+									if (cnt2 > m_memos.Count) cnt2 = m_memos.Count;
+
+									for (int i = 0; i < cnt2; i++)
+									{
+										m_memos[i].FileName = mm[i];
+									}
+									ret = true;
+								}
+							}
+						}
+						catch
+						{
+							ret = false;
+						}
+					}
 				}
 			}
 			catch
 			{
 				ret = false;
 			}
-
 			return ret;
 		}
 		public bool SaveAll(string p)
@@ -436,11 +493,39 @@ namespace Memo
 				}
 			}
 		}
+		public string CurrentFileName
+		{
+			get
+			{
+				if (SelectedMemoIndex >= 0)
+				{
+					return m_memos[SelectedMemoIndex].FileName;
+				}
+				else
+				{
+					return "";
+				}
+			}
+			set
+			{
+				if (SelectedMemoIndex >= 0)
+				{
+					m_memos[SelectedMemoIndex].FileName = value;
+				}
+			}
+		}
 		public void CopyFrom()
 		{
 			if (SelectedMemoIndex >= 0)
 			{
 				m_memos[SelectedMemoIndex].CopyFrom();
+			}
+		}
+		public void CutFrom()
+		{
+			if (SelectedMemoIndex >= 0)
+			{
+				m_memos[SelectedMemoIndex].CutFrom();
 			}
 		}
 		public void PasteTo()
@@ -487,6 +572,7 @@ namespace Memo
 					{
 						m_memos[SelectedMemoIndex].Doc = str;
 						m_tc.TabPages[SelectedMemoIndex].Text = Path.GetFileNameWithoutExtension(p);
+						m_memos[SelectedMemoIndex].FileName = p;
 						ret = true;
 					}
 				}
@@ -508,6 +594,10 @@ namespace Memo
 				if (File.Exists(p)) File.Delete(p);
 				File.WriteAllText(p, str, enc);
 				ret = File.Exists(p);
+				if(ret)
+				{
+					m_memos[SelectedMemoIndex].FileName = p;
+				}
 			}
 			catch
 			{
@@ -522,6 +612,11 @@ namespace Memo
 			OpenFileDialog dlg = new OpenFileDialog();
 			try
 			{
+				if (CurrentFileName!="")
+				{
+					dlg.InitialDirectory = Path.GetDirectoryName(CurrentFileName);
+					dlg.FileName = Path.GetFileName(CurrentFileName);
+				}
 				if(dlg.ShowDialog()==DialogResult.OK)
 				{
 					ret = Import(dlg.FileName, enc);
@@ -541,6 +636,11 @@ namespace Memo
 			SaveFileDialog dlg = new SaveFileDialog();
 			try
 			{
+				if (CurrentFileName != "")
+				{
+					dlg.InitialDirectory = Path.GetDirectoryName(CurrentFileName);
+					dlg.FileName = Path.GetFileName(CurrentFileName);
+				}
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
 					ret = Export(dlg.FileName, enc);
