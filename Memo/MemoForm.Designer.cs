@@ -41,8 +41,6 @@ namespace Memo
 			this.BtnEditCaption = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnSelectionToCaption = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnFontSettings = new System.Windows.Forms.ToolStripMenuItem();
-			this.btnCopy = new System.Windows.Forms.ToolStripButton();
-			this.btnPaste = new System.Windows.Forms.ToolStripButton();
 			this.btnMemos = new System.Windows.Forms.ToolStripDropDownButton();
 			this.memoCMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnClear = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +54,6 @@ namespace Memo
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileCMenu,
             this.btnEdit,
-            this.btnCopy,
-            this.btnPaste,
             this.btnMemos});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
@@ -169,26 +165,6 @@ namespace Memo
 			this.btnFontSettings.Size = new System.Drawing.Size(180, 22);
 			this.btnFontSettings.Text = "FontSettings";
 			// 
-			// btnCopy
-			// 
-			this.btnCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.btnCopy.Image = ((System.Drawing.Image)(resources.GetObject("btnCopy.Image")));
-			this.btnCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.btnCopy.Name = "btnCopy";
-			this.btnCopy.Size = new System.Drawing.Size(38, 22);
-			this.btnCopy.Text = "Copy";
-			this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-			// 
-			// btnPaste
-			// 
-			this.btnPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.btnPaste.Image = ((System.Drawing.Image)(resources.GetObject("btnPaste.Image")));
-			this.btnPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.btnPaste.Name = "btnPaste";
-			this.btnPaste.Size = new System.Drawing.Size(39, 22);
-			this.btnPaste.Text = "Paste";
-			this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
-			// 
 			// btnMemos
 			// 
 			this.btnMemos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -245,6 +221,7 @@ namespace Memo
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.memoEditList1);
 			this.ForeColor = System.Drawing.Color.White;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MemoForm";
 			this.ShowIcon = false;
 			this.Text = "Memo";
@@ -262,8 +239,6 @@ namespace Memo
 		#endregion
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private MemoEditList memoEditList1;
-		private System.Windows.Forms.ToolStripButton btnCopy;
-		private System.Windows.Forms.ToolStripButton btnPaste;
 		private System.Windows.Forms.ToolStripDropDownButton btnEdit;
 		private System.Windows.Forms.ToolStripMenuItem btnSelectionToCaption;
 		private System.Windows.Forms.ToolStripMenuItem btnFontSettings;

@@ -76,7 +76,15 @@ namespace Memo
         {
             if (m_form == null) return;
 
-            this.Location = new Point(m_form.Left + 10, m_form.Top - this.Height - 4);
+            if (m_form.WindowState == FormWindowState.Maximized)
+			{
+                this.Location = new Point(m_form.Left + 10, m_form.Top +4);
+            }
+            else
+			{
+                this.Location = new Point(m_form.Left + 10, m_form.Top - this.Height - 4);
+            }
+
 
         }
         // *****************************************************************

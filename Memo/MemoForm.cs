@@ -58,8 +58,6 @@ namespace Memo
 			set
 			{
 				toolStrip1.BackColor = value;
-				btnCopy.BackColor = value;
-				btnPaste.BackColor = value;
 				btnEdit.BackColor = value;
 				btnMemos.BackColor = value;
 				btnFontSettings.BackColor = value;

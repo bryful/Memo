@@ -9,6 +9,21 @@
 
 仕事でAfter Effectsを使ってる時に使う事が多かったので、同時併用が楽なようにしてあります。
 
+# 使い方
+
+起動させて適当なタブに書き込みます。終了しても保存されます。
+
+File/Exportで保存できます。開いてるタブに読み込まれます。保存時の文字コードはFileメニューで設定できます。
+File/Importで開いてるタブにファイルを読めます。
+
+
+Edit/Clearで現在開いてるタブを消去します。  
+Edit/EditCaptionでタブの見出しを編集できます。  
+Edit/SelectionToCaptionで現在選択中のテキストを見出しにできます。  
+FontSettingsでフォントを設定できます。  
+Copy/Pasteはコピー・ペーストです。  
+Memesメニューはテキストが入力されたタブのリストが表示されます。  
+
 
 # Dependency
 Visual studio 2019 C#  
