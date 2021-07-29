@@ -134,9 +134,20 @@ namespace Memo
 			if (pref.Load())
 			{
 				Size sz;
-				if (pref.GetSize("Size", out sz)) this.Size = sz;
+				if (pref.GetSize("Size", out sz)) 
+				{
+					if ((sz.Width > 100) && (sz.Height > 100))
+					{
+						this.Size = sz;
+					}
+				}
 				Point p;
-				if (pref.GetPoint("Point", out p)) this.Location = p;
+				if (pref.GetPoint("Point", out p))
+				{
+					if ((p.X >= 0)&& (p.Y >= 0)){
+						this.Location = p;
+					}
+				}
 				double v = -1;
 				if (pref.GetNum("index", out v)) if (v>=0)memoEditList1.SelectedMemoIndex = (int)v;
 				string s = ""; double f = 14;
